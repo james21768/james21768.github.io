@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>林志宇 James | Digital Name Card</title>
+  <meta name="description" content="林志宇 James 的單頁個人電子名片網站">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="回到首頁">
+      <span class="brand-mark">J</span>
+      <span data-i18n="brand">林志宇</span>
+    </a>
+    <nav class="site-nav" aria-label="主要導覽">
+      <a href="#about" data-i18n="navAbout">關於</a>
+      <a href="#work" data-i18n="navWork">事蹟</a>
+      <a href="#contact" data-i18n="navContact">聯絡</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button" id="themeToggle" type="button" aria-label="切換深淺色主題">
+        <span class="sun" aria-hidden="true"></span>
+      </button>
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">中</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow reveal" data-i18n="heroEyebrow">北醫醫學系學生 / 棋類與音樂愛好者</p>
+        <h1 class="hero-title reveal" data-i18n="heroTitle">林志宇</h1>
+        <p class="hero-subtitle reveal" data-i18n="heroSubtitle">在醫學學習、棋盤思考與音樂練習之間，培養專注、判斷與持續進步的節奏。</p>
+        <div class="hero-tags reveal" aria-label="興趣與專長">
+          <span data-i18n="tagOne">西洋棋</span>
+          <span data-i18n="tagTwo">象棋</span>
+          <span data-i18n="tagThree">鋼琴</span>
+          <span data-i18n="tagFour">桌球</span>
+        </div>
+      </div>
+
+      <div class="hero-stage reveal" aria-label="林志宇抽象個人視覺">
+        <div class="orbital">
+          <div class="portrait">
+            <div class="portrait-grid"></div>
+            <div class="portrait-face">
+              <span></span>
+              <strong>J</strong>
+            </div>
+          </div>
+          <span class="orbit orbit-one"></span>
+          <span class="orbit orbit-two"></span>
+          <span class="orbit orbit-three"></span>
+          <div class="floating-card card-a">
+            <small data-i18n="heroMetricOneLabel">興趣</small>
+            <strong>4</strong>
+          </div>
+          <div class="floating-card card-b">
+            <small data-i18n="heroMetricTwoLabel">全國賽</small>
+            <strong>3rd</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats band" aria-label="精選數字">
+      <div class="stat reveal">
+        <strong data-count="4">0</strong>
+        <span data-i18n="statOne">項主要興趣與專長</span>
+      </div>
+      <div class="stat reveal">
+        <strong data-count="1">0</strong>
+        <span data-i18n="statTwo">個醫學學習目標</span>
+      </div>
+      <div class="stat reveal">
+        <strong data-count="3">0</strong>
+        <span data-i18n="statThree">象棋全國團體賽名次</span>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="section-heading reveal">
+        <p class="eyebrow" data-i18n="aboutEyebrow">About</p>
+        <h2 data-i18n="aboutTitle">關於我</h2>
+      </div>
+      <div class="about-layout">
+        <div class="glass-panel reveal">
+          <p data-i18n="aboutBodyOne">林志宇，英文名 James，是一位就讀臺北醫學大學醫學系的大學生。平時喜歡下棋，尤其享受西洋棋與象棋中推演局勢、判斷取捨的過程。</p>
+          <p data-i18n="aboutBodyTwo">除了棋類，他也喜歡彈鋼琴與打桌球。醫學訓練讓他重視細節與責任感，而這些興趣則讓他在課業之外保持專注、節奏與思考的彈性。</p>
+        </div>
+        <div class="skill-grid reveal">
+          <article>
+            <span>01</span>
+            <h3 data-i18n="skillOneTitle">棋盤思考</h3>
+            <p data-i18n="skillOneBody">透過西洋棋與象棋訓練判斷力、耐心與長線規劃。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3 data-i18n="skillTwoTitle">音樂節奏</h3>
+            <p data-i18n="skillTwoBody">彈鋼琴讓他在旋律、練習與穩定表現中找到平衡。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3 data-i18n="skillThreeTitle">運動反應</h3>
+            <p data-i18n="skillThreeBody">桌球培養速度、手眼協調與面對變化時的即時反應。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section work" id="work">
+      <div class="section-heading reveal">
+        <p class="eyebrow" data-i18n="workEyebrow">Milestones</p>
+        <h2 data-i18n="workTitle">事蹟與作品</h2>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <time>2026</time>
+          <h3 data-i18n="milestoneOneTitle">象棋全國團體賽第三名</h3>
+          <p data-i18n="milestoneOneBody">代表團隊參與全國象棋團體賽，與隊友合作取得第三名，累積競賽經驗與臨場判斷能力。</p>
+        </article>
+        <article class="timeline-item reveal">
+          <time>2025</time>
+          <h3 data-i18n="milestoneTwoTitle">就讀臺北醫學大學醫學系</h3>
+          <p data-i18n="milestoneTwoBody">在醫學課程中學習基礎醫學、臨床思維與團隊合作，持續培養成為醫學生所需的專注與責任感。</p>
+        </article>
+        <article class="timeline-item reveal">
+          <time>2024</time>
+          <h3 data-i18n="milestoneThreeTitle">持續精進鋼琴與桌球</h3>
+          <p data-i18n="milestoneThreeBody">在課業之外保持規律練習，透過音樂與運動調整狀態，也讓生活保持彈性與平衡。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section showcase">
+      <div class="showcase-copy reveal">
+        <p class="eyebrow" data-i18n="showcaseEyebrow">Now Building</p>
+        <h2 data-i18n="showcaseTitle">在醫學、棋局與音樂之間，練習成為更穩定的人。</h2>
+        <p data-i18n="showcaseBody">James 相信長期累積比一時爆發更重要。無論是讀醫、下棋、彈琴或打球，他都希望把每一次練習變成下一次更好的起點。</p>
+      </div>
+      <div class="device reveal" aria-hidden="true">
+        <div class="device-bar"></div>
+        <div class="device-screen">
+          <div class="scan-line"></div>
+          <div class="mini-window one"></div>
+          <div class="mini-window two"></div>
+          <div class="mini-window three"></div>
+          <div class="wave"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="section-heading reveal">
+        <p class="eyebrow" data-i18n="contactEyebrow">Contact</p>
+        <h2 data-i18n="contactTitle">聯絡我</h2>
+      </div>
+      <div class="contact-layout">
+        <div class="contact-card reveal">
+          <p data-i18n="contactBody">歡迎透過 Email 或電話聯絡，聊聊學習、棋類、音樂、桌球，或任何有趣的交流機會。</p>
+          <a href="mailto:sd9977james@gmail.com">sd9977james@gmail.com</a>
+          <a href="tel:0978801930">0978 801 930</a>
+        </div>
+        <div class="socials reveal" aria-label="社群連結">
+          <a href="#" aria-label="LinkedIn">LinkedIn</a>
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="GitHub">GitHub</a>
+          <a href="#" aria-label="Threads">Threads</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span data-i18n="footerText">© 2026 林志宇 James。以純 HTML / CSS / JS 製作。</span>
+  </footer>
+</body>
+</html>
